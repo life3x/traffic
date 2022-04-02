@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-f%tqw9%k6+6#lf=e5&q#e+r^(+q$pyl^6ko=_3zu+=mq#js(+#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'traffic-mapper.herokuapp.com']
 
 
 # Application definition
