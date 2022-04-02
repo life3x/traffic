@@ -1,0 +1,40 @@
+.codeSnippet {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-49%, -49%);
+  width: 800px;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: whitesmoke;
+  font-weight: 400;
+  line-height: 1.6;
+  /* height: 100vh; */
+  /* overscroll-behavior-y: none; */
+
+  background-color: black;
+  padding: 2.5rem;
+
+  display: flex;
+}
+
+.donebtn {
+  position: absolute;
+  left: 48%;
+  top: 100%;
+  transform: translate(-49%, -1%);
+  width: 200px;
+  margin-top: -20px;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: #42484d;
+  cursor: pointer;
+}
