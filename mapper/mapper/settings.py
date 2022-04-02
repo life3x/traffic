@@ -18,7 +18,8 @@ TEMPLATE_DIR = Path.joinpath(BASE_DIR, "templates")
 # print(BASE_DIR)
 STATIC_DIR = Path.joinpath(BASE_DIR, "static")
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
