@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/integration.css" %}">
+    <link rel="stylesheet" href="{% static "css/prism.css" %}">
+  </head>
+  <body>
+{% if user.is_authenticated %}
+<div class="codeSnippet">
+  <h1 style="text-align:center;">Mapper integation</h1>
+  <p style="text-align:center;">Paste the below code snippet in the html file of your website's home page</p>
+    <pre class="code">
+      <code class="language-js">
+function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        }
+      }
+
+function showPosition(position) {
+  var ipAddress = 0;
+  fetch("https://api.ipify.org/?format=json")
+    .then((response) => response.json())
+    .then((data) => {
+      fetch(
+        `http://127.0.0.1:8000/storeData/{{user.username}}/{{token}}/{{registeredSiteId}}/${position.coords.latitude}/${position.coords.longitude}/${data["ip"]}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+    });
+}
+getLocation();
+    </code>
+  </pre>
+<button type="button" class="donebtn" name="button" onclick="location.href='/mapper/{{user.username}}';">Go to mapper</button><br>
+</div>
+<script type="text/javascript" src="{% static "javascript/prism.js" %}"></script>
+<script type="text/javascript" src="{% static "javascript/integration.js" %}"></script>
+{% else %}
+<meta http-equiv="REFRESH" content="0;url=/accounts/login">
+{% endif %}
+</body>
+</html>

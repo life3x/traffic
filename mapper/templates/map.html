@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/map.css" %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <p class="hidden site_id_context">{{site_id_context}}</p>
+    <div class="sidebar">
+      <a href="/" style="text-decoration: none;"><h1 class="logoTitle">🍍</h1></a>
+      <h1 class="summarytitle">Showing data for:</h1>
+      <!-- <p class="websiteUrl"></p> -->
+      <a href="" class="websiteUrl"></a>
+      <button type="button" class="headerbtns" name="button" onclick="location.href='/accounts/siteregister';">Register new website</button><br>
+      <!-- <h1 class="summarytitle" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</h1> -->
+
+     <ul class="sidebardata">
+       <div class="websitediv">
+       <!-- <button type="button" class="websites" name="button" onclick="location.href='/accounts/profile';">www.xyz.com</button> -->
+     </div>
+       <li class="summarydiv">
+         <h2 class="summarydivtitle">Total Visitors: </h2>
+         <div class="summarydata">
+           <h1 class="totalvisitors"></h1>
+         </div>
+       </li>
+
+       <li class="summarydiv">
+         <h2 class="summarydivtitle">States: </h2>
+         <div class="summarydata">
+           <h1 class="states"></h1>
+         </div>
+         <canvas id="statesChart" class="visitorgraph" style="width:100%;max-width:2000px;height:250px"></canvas>
+       </li>
+
+       <li class="summarydiv">
+         <h2 class="summarydivtitle">Countries: </h2>
+         <div class="summarydata">
+           <h1 class="countries"></h1>
+         </div>
+         <canvas id="countryChart" class="visitorgraph" style="width:100%;max-width:2000px;height:250px"></canvas>
+       </li>
+
+
+     </ul>
+   </div>
+
+   <div id="map"></div>
+
+    <script type="text/javascript" src="{% static "javascript/map.js" %}"></script>
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+  </body>
+</html>

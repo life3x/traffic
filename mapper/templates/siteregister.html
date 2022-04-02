@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{user.username}} - site registration</title>
+    <link rel="stylesheet" href="{% static "css/siteregister.css" %}" />
+  </head>
+  <body>
+    <div class="siteregisterform">
+      <h2>Register your website</h2>
+    <form class="" action="/accounts/siteregister" method="POST" >
+      {% csrf_token %}
+      <input class="url" type="url" name="url" value="" placeholder="Enter website URL" required><br>
+      <input class="registerbtn" type="submit" name="" value="Register Site">
+    </form>
+    <div class="errormsgdiv">
+      {% for message in messages %}
+      <h6 class="errormsg">{{message}}</h6>
+      {% endfor %}
+    </div>
+    </div>
+  </body>
+</html>

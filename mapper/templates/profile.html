@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+    <style media="screen">
+      .profilediv {
+        position: fixed;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #F5F5F5;
+        padding: 25px;
+        border-radius: 15px;
+      }
+
+      .profilepic {
+        padding-bottom: 30px
+      }
+
+      img {
+        border-radius: 50%
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 50%; */
+      }
+
+      .headerbtns {
+        width: 200px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: none;
+        border-radius: 5px;
+        color: whitesmoke;
+        background-color: #42484d;
+        cursor: pointer;
+      }
+
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  </head>
+  <body>
+  {% if user.is_authenticated %}
+  <div class="profilediv">
+  <div class="profilepic container">
+    <img class="center" src="{% static "images/default-profile-picture.jpg" %}" alt="" width= "200" height="200">
+  </div>
+  <h4>Hello, {{user.first_name}} {{user.last_name}}</h4>
+  <h6>Username: {{user.username}}</h6>
+  <h6>Email: {{user.email}}</h6>
+  <h6>Registered websites: {{registered_sites_number}}</h6><br>
+  <button type="button" class="headerbtns" name="button" onclick="location.href='/accounts/siteregister';">Register new website</button><br>
+  {% else %}
+  <meta http-equiv="REFRESH" content="0;url=login">
+  {% endif %}
+  </div>
+  </body>
+</html>
