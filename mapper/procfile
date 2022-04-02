@@ -1,1 +1,1 @@
-web: gunicorn traffic-mapper:app
+web: gunicorn mapper.wsgi --log-file -
