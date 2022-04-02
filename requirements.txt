@@ -1,5 +1,5 @@
 alice-blue==1.0.2
-altair==4.2.0
+altair
 api-display-purposes==0.0.3
 APScheduler==3.6.3
 argon2-cffi==21.3.0
@@ -25,7 +25,7 @@ cffi==1.15.0
 channels==3.0.4
 chardet==3.0.4
 charset-normalizer==2.0.9
-clarifai==2.6.2
+clarifai
 click==7.1.2
 colorama==0.4.4
 configparser==3.8.1
@@ -87,7 +87,7 @@ itsdangerous==2.0.1
 jedi==0.18.1
 Jinja2==3.0.3
 joblib==1.1.0
-jsonschema==4.3.3
+jsonschema
 jupyter-client==7.1.0
 jupyter-core==4.9.1
 jupyterlab-pygments==0.1.2
