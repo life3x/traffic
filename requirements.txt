@@ -101,6 +101,7 @@ prometheus-client==0.12.0
 prompt-toolkit==3.0.24
 protlib==1.4
 protobuf==3.19.1
+psycopg2
 py==1.11.0
 pyarrow==6.0.1
 pyasn1==0.4.8
