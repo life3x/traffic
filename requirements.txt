@@ -147,8 +147,6 @@ python-dateutil==2.8.2
 python-engineio==4.3.1
 python-socketio==5.5.1
 python-telegram-bot==13.9
-pywin32
-pywin32-ctypes
 pywinpty==1.1.6
 PyYAML==6.0
 pyzmq==22.3.0
