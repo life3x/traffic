@@ -1,1 +1,1 @@
-web: gunicorn mapper.wsgi
+web: gunicorn traffic-mapper.wsgi
