@@ -1,1 +1,1 @@
-web: gunicorn mapper.wsgi --log-file -
+web: gunicorn mapper.wsgi
